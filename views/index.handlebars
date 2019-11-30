@@ -1,86 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="/assets/css/burger.css" type="text/css">
+        <title>Eat Da Burger!</title>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="/assets/js/burgers.js"></script>
+        
+
+    </head>
+    <body>
+    {{!-- <body background="https://media.giphy.com/media/l4Ki5FgQxmVUfkOvC/giphy.gif"> --}}
+        {{{ body }}}
+    </body>
+</html>
+<h1>EAT - DA - BURGER!</h1>
 <div class = "container">
       <div class = "jumbotron">
-         <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3s623L0lU7KC9x3iLmSnP3vN0Us9pERT8KMMlqjPmXHx-COesJA" width='auto'height='auto'>
-           
-      </div>
- <ul id="burger-text">
-        {{#each burgers}}
-          {{#unless devoured}}
-        
-          <form method="PUT" action="/api/burgers/{{id}}?_method=PUT" class="form-inline" id="burger-text"></center>
-          <div class="change-devoured">
-            <input type="hidden" name="devoured" value="true"/>
-            <label class="sr-only">Burger</label>
-            <p class="form-control-static">{{burger_name}}</p>
-          </div>
-          </form>
-            {{> burgers/burger-block devoured=true}}
-          {{/unless}}
-        {{/each}}</center>
-  </ul>
-</div>
-  <div class="col-sm-12 col-md-6">
-    
-    <ul id="burger-text">
-      {{#each burgers}}
-        {{#if devoured}}
-          <label class="sr-only">Devoured Burger</label>
-          <p class="form-control-static">{{id}}. {{burger_name}}</p>
-           
-        </form>
-        {{/if}}
-      {{/each}}
-    </ul>
-  </div>
-<div class="col-12">
-  
-    <form class="create-form">
-    <div class="form-group">
-      <label for="brgr" id="burger-text">Burger Type:</label>
-      <input type="text" id="brgr" name="burger_name">
-      <button type="submit">Add Burger</button>
-    </form>
-    </div>
-  </center>
-</div>
-      
-      
-      
-
-       {{!-- <h1>Eat-D-Burger!</h1>
-
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>burgers that are devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
+         <img src = "https://clipartion.com/wp-content/uploads/2015/11/burger-and-sandwich-png-images-download-pictures.png" width='35%' height='25%'>
+        <h2>Add a Burger</h2>
 <form class="create-form">
 
   <div class="form-group">
-    <label for="brgr">Burger Name:</label>
-    <input type="text" id="brgr" name="name">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="name">
   </div>
 
   <div class="form-group">
-    <label for="devoured">devoured</label><br>
-    <input type="radio" name="devoured" value="1" checked> devoured!<br>
-    
+    {{!-- <label for="devour">Devour it</label><br> --}}
+    <input type="radio" name="devour" value="1" checked> devour!<br>
+    {{!-- <input type="radio" name="devour" value="0"> Awake --}}
   </div>
 
   <button type="submit">Add Burger</button>
-</form> --}}
+</form>
+</div>   
+      </div>
+      
+
+{{!-- <h2>Cats that are not sleepy!</h2> --}}
+<div id="d1">
+    <ul>
+  {{#each burgers}}
+    {{#unless devour}}
+      {{> burgers/burger-block devour=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+</div>
+
+{{!-- <h2>burgers that are devour!</h2> --}}
+
+<div id="d2">
+<ul>
+  {{#each burgers}}
+    {{#if devour}}
+      {{> burgers/burger-block devour=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+</div>
